@@ -9,7 +9,7 @@
      onclick="eva.say()">
 <img src="http://pluspng.com/img-png/adan-y-eva-png-jesus-minus-286.png" height="340" width="200"
      onclick="adam.say()">
-<img id ="apple" src="img/apple.png"
+<img id ="apple" src="apple.jpg"
      height="100" width="100" onclick = "apple.decrease()" onlick= "apple.isEmpty()">
 <p id="demo"></p>
 <p id="demo1"></p>
@@ -26,28 +26,28 @@
             }
             else if(this.weight === 3){
                 alert("Chỉ được cạp thêm " + this.weight + " miếng!");
-                document.getElementById("apple").src = "img/apple1.png";
+                document.getElementById("apple").src = "apple1.jpg";
             }
             else if(this.weight === 2){
                 alert("Chỉ được cạp thêm " + this.weight + " miếng!");
-                document.getElementById("apple").src = "img/apple2.png";
+                document.getElementById("apple").src = "apple2.jpg";
             }
             else if(this.weight === 1){
                 alert("Chỉ được cạp thêm " + this.weight + " miếng!");
-                document.getElementById("apple").src = "img/apple2-1.png";
+                document.getElementById("apple").src = "apple3.jpg";
             }
             else if(this.weight === 0){
                 this.isEmpty();
-                document.getElementById("apple").src = "img/apple3.png";
+                document.getElementById("apple").src = "apple4.jpg";
             }
             else{
-                alert("Hết rồi mà!");
+                alert("ăn cùi không!");
             }
         }
         isEmpty() {
             if (this.weight == 0) {
-                alert("Đã ăn hết!");
-                document.getElementById("apple").src = "img/apple3.png";
+                alert("hết rồi!");
+                document.getElementById("apple").src = "apple4.jpg";
             }
         }
         getWeight() {
