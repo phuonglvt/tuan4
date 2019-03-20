@@ -58,7 +58,7 @@ function start() {
 
 
         document.getElementById('game').innerHTML = hero.getHeroElement();
-        setTimeout(start, 70);
+        setTimeout(start, 80);
 
 }
 

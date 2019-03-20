@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor (weight){
+            this.weight = weight;
+        }
+    }
+    class Human {
+        constructor(_name, _gender, _weight) {
+            this.name = _name;
+            this.gender = _gender;
+            this.weight = _weight;
+            this.setGender = function (Gender) {
+                this.gender = Gender;
+            };
+
+            this.getGender = function () {
+                return this.gender;
+            };
+
+            this.setName = function (name) {
+                this.name = name;
+            };
+            this.getName = function () {
+                return this.name;
+            };
+
+            this.setWeight = function (weight) {
+                this.weight = weight;
+            };
+
+            this.getWeight = function () {
+                return this.weight;
+            };
+        }
+    }
+    function checkApple() {
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="http://pluspng.com/img-png/adan-y-eva-png-minus-say-hello-565.png" height="340" width="200"
+     onclick="eva.say()">
+<img src="http://pluspng.com/img-png/adan-y-eva-png-jesus-minus-286.png" height="340" width="200"
+     onclick="adam.say()">
+<img id ="apple" src="img/apple.png"
+     height="100" width="100" onclick = "apple.decrease()" onlick= "apple.isEmpty()">
+<p id="demo"></p>
+<p id="demo1"></p>
+<input type = button value="Check Apple" onclick="adam.checkApple()">
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 4;
+        }
+        decrease() {
+            this.weight -= 1;
+            if(this.weight>3){
+                alert("Chỉ được cạp thêm " + this.weight + " miếng!");
+            }
+            else if(this.weight === 3){
+                alert("Chỉ được cạp thêm " + this.weight + " miếng!");
+                document.getElementById("apple").src = "img/apple1.png";
+            }
+            else if(this.weight === 2){
+                alert("Chỉ được cạp thêm " + this.weight + " miếng!");
+                document.getElementById("apple").src = "img/apple2.png";
+            }
+            else if(this.weight === 1){
+                alert("Chỉ được cạp thêm " + this.weight + " miếng!");
+                document.getElementById("apple").src = "img/apple2-1.png";
+            }
+            else if(this.weight === 0){
+                this.isEmpty();
+                document.getElementById("apple").src = "img/apple3.png";
+            }
+            else{
+                alert("Hết rồi mà!");
+            }
+        }
+        isEmpty() {
+            if (this.weight == 0) {
+                alert("Đã ăn hết!");
+                document.getElementById("apple").src = "img/apple3.png";
+            }
+        }
+        getWeight() {
+            return this.weight;
+        }
+    }
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.appleWeight = apple.getWeight();
+        }
+        isMale() {
+            if (this.gender === Male) {
+                return Male;
+            }
+            else {
+                return Female;
+            }
+        }
+        setGender(gender) {
+            this.gender = gender;
+        }
+        checkApple() {
+            alert("Weight (Apple) is "+this.appleWeight);
+        }
+        eat(apple) {
+            if (apple.weight > 0) {
+                apple.decrease();
+            }
+            else {
+                apple.isEmpty();
+            }
+        }
+        say() {
+            alert("Hi i'm " + this.name);
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        getInfo(){
+            return "Name: " + this.name + "   Weight: " + this.weight + " kg     Gender: " +this.gender;
+        }
+    }
+    var apple = new Apple();
+    var adam = new Human("Adam", "Male", 65);
+    var eva = new Human("Eva", "Female", 55);
+    document.getElementById("demo").innerHTML = eva.getInfo();
+    document.getElementById("demo1").innerHTML = adam.getInfo();
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đèn và công tắc</title>
+</head>
+<body>
+<div align="center">
+
+    <img id="lamp" src="offLamp.jpg" height="450" width="279" />
+    <br><br>
+
+    <input type="button" id="on" value="On" onclick="lamp.turnOn()">
+    <input type="button" id="off" value="Off" onclick="lamp.turnOff()">
+</div>
+<script>
+    class Lamp {
+        constructor (status){
+            this.status = status;
+        }
+            turnOff () {
+                this.status == false;
+                document.getElementById("lamp").src = "offLamp.jpg";
+                console.log("LampTurnOff!");
+            };
+            turnOn () {
+                this.status == true;
+                document.getElementById("lamp").src  = "onLamp.jpg";
+                console.log("LampTurnOn!");
+        }
+    }
+    class Switch {
+        constructor (status,lamp){
+            this.status = status;
+            this.lamp  = lamp;
+        }
+        switchOff(){
+            this.status = false;
+            this.lamp.turnOff();
+        }
+        switchOn(){
+            this.status = true;
+            this.lamp.turnOn();
+        }
+
+    }
+
+    var lamp = new Lamp(false);
+    var btn = new Switch(false, lamp);
+</script>
+</body>
+</html>
