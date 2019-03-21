@@ -19,6 +19,7 @@
         constructor() {
             this.weight = 4;
         }
+
         decrease() {
             this.weight -= 1;
             if(this.weight>3){
@@ -44,16 +45,19 @@
                 alert("ăn cùi không!");
             }
         }
+
         isEmpty() {
             if (this.weight == 0) {
                 alert("hết rồi!");
                 document.getElementById("apple").src = "apple4.jpg";
             }
         }
+
         getWeight() {
             return this.weight;
         }
     }
+
     class Human {
         constructor(name, gender, weight) {
             this.name = name;
@@ -61,6 +65,7 @@
             this.weight = weight;
             this.appleWeight = apple.getWeight();
         }
+
         isMale() {
             if (this.gender === Male) {
                 return Male;
@@ -69,12 +74,15 @@
                 return Female;
             }
         }
+
         setGender(gender) {
             this.gender = gender;
         }
+
         checkApple() {
             alert("Weight (Apple) is "+this.appleWeight);
         }
+
         eat(apple) {
             if (apple.weight > 0) {
                 apple.decrease();
@@ -83,25 +91,32 @@
                 apple.isEmpty();
             }
         }
+
         say() {
             alert("Hi i'm " + this.name);
         }
+
         getWeight() {
             return this.weight;
         }
+
         setWeight(weight) {
             this.weight = weight;
         }
+
         getName() {
             return this.name;
         }
+
         setName(name) {
             this.name = name;
         }
+
         getInfo(){
             return "Name: " + this.name + "   Weight: " + this.weight + " kg     Gender: " +this.gender;
         }
     }
+
     var apple = new Apple();
     var adam = new Human("Adam", "Male", 65);
     var eva = new Human("Eva", "Female", 55);

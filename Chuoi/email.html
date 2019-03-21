@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function email(str){
+        regexp = /^[A-Z]/;
+        if (regexp.test(str)) {
+            console.log("Mail hop le!");
+        } else {
+            console.log("Mail khong hop le!");
+        }
+    }
+
+    email('a@gmail.com');
+    email('abc@hotmail.com');
+    email('@#abc@gmail.com');
+</script>
+</body>
+</html>

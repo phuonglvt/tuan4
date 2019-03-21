@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tom & Jerry</title>
+</head>
+<body>
+<img src="jerry.png" id = "jerry" height="240" width="240" onclick="Tom.catchMouse()">
+<img src="tom.jpg"  height="340" width="540" onclick ="Tom.makeSound()">
+<d id = "status"></d>
+
+<div id = "button" hidden ="hidden">
+    <input type ="button" id = "button" value="Ăn" onclick ="Tom.eatMouse()">
+</div>
+</body>
+<script>
+    document.getElementById('button').hidden = true;
+    class Rat {
+        constructor(name, weight, speed, state) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.state = true;
+            this.heal = 4;
+        }
+
+        getStatus() {
+            if (this.heal < 0) {
+                this.state = false;
+            }
+            else {
+                this.state = true;
+            }
+        }
+
+        makeSound() {
+            alert("Chíp Chíp");
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Cat {
+        constructor(name, weight, maxSpeed) {
+            this.name = name;
+            this.weight = weight;
+            this.maxSpeed = maxSpeed;
+            this.heal = 4;
+        }
+
+        makeSound() {
+            alert("Meo Meo!!!");
+        }
+
+        catchMouse() {
+            this.heal -= 1;
+            if (this.heal === 0) {
+                document.getElementById("jerry").src = "img/jerry4.png";
+                alert("Đã bắt được chuột");
+                document.getElementById('button').hidden = false;
+            }
+            else if (this.heal === 3){
+                document.getElementById("jerry").src = "img/jerry1.png";
+            }
+            else if (this.heal ===2){
+                document.getElementById("jerry").src = "img/jerry2.png";
+            }
+            else if (this.heal ===1){
+                document.getElementById("jerry").src = "img/jerry3.png";
+            }
+        }
+
+        eatMouse() {
+            alert("Nhăm nhăm! :))");
+        }
+    }
+
+    let Tom = new Cat ("Tom", 10, 50);
+
+</script>
+
+
+</html>
