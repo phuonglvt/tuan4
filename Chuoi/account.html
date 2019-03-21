@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acount 11 number</title>
+</head>
+<body>
+<script>
+    function acount(str){
+        regexp = /^([0-9]{11})|([0-9]{2}-[0-9]{3}-[0-9]{6})$/;
+        if (regexp.test(str)) {
+            console.log("Acount is valid!");
+        } else {
+            console.log("Acount is not valid!");
+        }
+    }
+
+    acount('123abc_');
+    acount('12345678912');
+</script>
+</body>
+</html>
