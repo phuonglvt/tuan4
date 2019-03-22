@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isValidateSecuritycode(str) {
+        let regexp = /^[0-9]{6}/;
+        if (regexp.test(str)) {
+            console.log("Welcome sir!");
+        } else {
+            console.log("Validate Security is wrong!");
+        }
+    }
+    isValidateSecuritycode('120800');
+    isValidateSecuritycode('KAIZ12');
+    isValidateSecuritycode('020297');
+    isValidateSecuritycode('TV1208');
+</script>
+</body>
+</html>

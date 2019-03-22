@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isValidateClassname(str) {
+        let regexp = /^[CAP][0-9]{4}[GHIKLM]$/;
+        if (regexp.test(str)) {
+            document.write("Is Validate Classname" + "<br>");
+        } else {
+            document.write("Is not Validate Classname" + "<br>");
+        }
+    }
+    isValidateClassname('123456');
+    isValidateClassname('C0219H');
+    isValidateClassname('Abcdefg');
+    isValidateClassname('C0318G');
+
+</script>
+</body>
+</html>
