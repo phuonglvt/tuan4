@@ -6,15 +6,16 @@
 </head>
 <body>
 </body>
-<script !src="">
+<script>
     function isFirstLetterUpperCase(str){
-        regexp = /^[A-Z]/;
+        let regexp = /^[A-Z]/;
         if (regexp.test(str)) {
-            console.log("Mail hop le!");
+            console.log("Ky tu dau tien là chu hoa!");
         } else {
-            console.log("Mail khong hop le!");
+            console.log("Ky tu dau tien khong la chu hoa!");
         }
     }
+
     isFirstLetterUpperCase('Nguyen Van Nam');
     isFirstLetterUpperCase('NGUYEN VAN NAM');
     isFirstLetterUpperCase('nguyen van nam');

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính ngày - tháng - năm - giờ - phút - giây</title>
+</head>
+<body>
+<script>
+    let birthday = new Date(2000, 7, 12, 3, 2, 15);
+    let now = new Date();
+
+    let totalYear = now.getFullYear()-birthday.getFullYear();
+    let totalMonth = now.getMonth()-birthday.getMonth()+12*totalYear;
+    let totalDay = now.getDay()-birthday.getDay()+ 365*totalYear;
+    let totalHours = now.getHours() -birthday.getHours() + 24*365*totalYear;
+    let totalMinutes = now.getMinutes() -birthday.getMinutes() + 60*365*totalYear;
+    let totalSeconds = now.getSeconds() -birthday.getSeconds() + 60*60*365*totalYear;
+
+    document.write("Tôi đã sống " + totalYear + " năm" + "<br>");
+    document.write("Tôi đã sống " + totalMonth + " tháng" + "<br>");
+    document.write("Tôi đã sống " + totalDay + " ngày" + "<br>");
+    document.write("Tôi đã sống " + totalHours + " giờ" + "<br>");
+    document.write("Tôi đã sống " + totalMinutes + " phút" + "<br>");
+    document.write("Tôi đã sống " + totalSeconds + " giây" + "<br>");
+</script>
+</body>
+</html>
