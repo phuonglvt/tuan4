@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var val = parseInt(prompt("Enter a value to count: "));
+
+    function count(nums, val) {
+        var count = 0;
+        var position = binSearch(nums, val);
+        if (position > -1) {
+            count++;
+            for (var i = position -1; i > 0; i--) {
+                if (nums[i] == val) {
+                    count ++;
+                }
+                else {
+                    break;
+                }
+            }
+
+            for (var i = position +1; i < nums.length; i++) {
+                if (nums[i] == val) {
+                    count++;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+
+    var nums = [];
+    for(var i=0;i<100;i++){
+        nums[i] = Math.floor(Math.random() * 101);
+    }
+
+    insertionsort(nums);
+
+    dispArr(nums);
+    document.write("<br/>");
+
+    var retVal = count(nums, val);
+
+    document.write("Found " + retVal + " occurrences of " + val + ".");
+</script>
+</body>
+</html>
