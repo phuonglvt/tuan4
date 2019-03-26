@@ -9,13 +9,13 @@
 <script>
     var nums = [];
     for(var i = 0; i < 100; i++){
-        nums[i] = Math.floor(Math.random() * 101);
+        nums[i] = Math.floor(Math.random() * 100)+1;
     }
 
     nums.sort(function(a, b){
         return a-b});
 
-    let validNum = Math.floor(Math.random() * 101);
+    let validNum = Math.floor(Math.random() * 100)+1;
     document.write(nums[0]);
 
     function findValue(){
