@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Find phonenumber</title>
+</head>
+
+<body>
+<script>
+    var nums = ["0914", "0255", "0914393944", "037", "055", "025", "0165512245"];
+    regexp = /^[0-9]{2}[0-9]{8}$/;
+    for (let i = 0; i < nums.length; ++i) {
+        if (regexp.test(nums[i])) {
+            if (nums[i].substr(0, 2) == "01") {
+                console.log(nums[i] + " : là số Vietel");
+            }
+            else {
+                console.log("Không phải là số Vietel");
+            }
+        }
+        else {
+            console.log("Không phải là định dạng số điện thoại");
+        }
+    }
+</script>
+</body>
+
+</html>
