@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Guess the numbers</title>
+
 </head>
 <body>
-
+<h2>Game Guess the Number</h2>
+<input type="button" value="Play" onclick="GameGuessNumber()"/>
 <script>
-    var nums = [];
-    for(var i = 0; i < 100; i++){
-        nums[i] = Math.floor(Math.random() * 100)+1;
-    }
-
-    nums.sort(function(a, b){
-        return a-b});
-
-    let validNum = Math.floor(Math.random() * 100)+1;
-    document.write(nums[0]);
-
-    function findValue(){
-        for (i=0; i<= nums.length; i++){
-            if(nums[i] === validNum){
-                document.write("Serect Number is "+ validNum +". Found after " + (i+1) +" times");
-            }
+    function GameGuessNumber() {
+        var n = prompt("Enter your number(0-100): ");
+        var r = Math.round(10*Math.random()+100);
+        if (n == r) {
+            alert("Congralation! You are the winner!");
+        } else {
+            alert("Our number: "  + r +"\n Wish you luck next time!");
         }
     }
-    findValue(nums);
 </script>
 </body>
 </html>
